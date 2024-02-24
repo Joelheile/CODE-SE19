@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  h1 {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    margin: 0 0 10px 0; /* Spacing below the header */
+    padding: 10px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Spacing above the footer */
+  }
+  
+  .links, .text {
+    background-color: white;
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 10px;
+    flex-basis: 48%; /* Adjust the width as required */
+  }
+  
+  .links {
+    text-align: left;
+  }
+  
+  .links ul {
+    padding-left: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list styling */
+  }
+  
+  .links li:before {
+    content: "• "; /* Bullet point */
+    color: #4CAF50; /* Green color for bullet point */
+  }
+  
+  footer {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 0; /* Remove default margin */
+  }
+  
