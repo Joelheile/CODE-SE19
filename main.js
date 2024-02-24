@@ -13,13 +13,16 @@ class Header extends HTMLElement {
                     <a href="/index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
+                <a href="/pages/addSuccess.html" class="nav-link">Add Success</a>
+            </li>
+                <li class="nav-item">
                     <a href="/pages/about.html" class="nav-link">About YFN</a>
                 </li>
                 <li class="nav-item">
                     <a href="/pages/team.html" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Be Part of</a>
+                    <a href="https://youngfounders.network" class="nav-link">Be Part of</a>
                 </li>
             </ul>
             <div class="hamburger">

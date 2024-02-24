@@ -15,7 +15,7 @@ header {
   background-color: #fff;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5rem; /* X-5rem padding (left and right) */
+  padding: 0rem 5rem;
 }
 
 .icon {
@@ -96,9 +96,9 @@ h3 {
 }
 
 .nav-link {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #475569;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111111;
 }
 
 .nav-link:hover {
