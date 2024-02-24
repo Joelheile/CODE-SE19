@@ -48,8 +48,11 @@ a {
   color: #91880c;
 }
 
-h3 {
+h2 {
   font-size: 32px;
+}
+h3 {
+  font-size: 28px;
 }
 
 .header {

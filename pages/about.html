@@ -3,21 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/about.css" />
     <title>YFN Success Tracker</title>
   </head>
-  <script type="module" src="main.js"></script>
+  <script type="module" src="../main.js"></script>
 
   <body>
     <main-header></main-header>
 
     <main>
-      <div class="search">
-        <input value="Enter your search..." />
-      </div>
-      <div class="trackerView">
-        <div class="trackerElement"></div>
-      </div>
+      <section class="welcome">
+        <div id="welcome-text">
+          <h1>Welcome to YFN</h1>
+          <p>
+            We are a collective of young entrepeneurs and startup enthusiasts
+          </p>
+          <p>We share a passion for "tackling things ourselves".</p>
+          <p>
+            We don't rely on the world to improve, we are the change we have
+            been waiting for.
+          </p>
+        </div>
+        <img src="../assets/group.jpg" />
+      </section>
+
+      <section id="faq">
+        <h2>FAQ - What do you want to now?</h2>
+        <ul class="tota11y-accordion" aria-label="FAQs accordion">
+          <li>
+            <a href="#acc1" id="#accLink1"
+              >Do I have to have already founded a company to become a
+              member?</a
+            >
+            <section class="content" id="acc1" aria-labelledby="accLink1">
+              <p>
+                No, you don't have to. With us, it's less about the start-up
+                behind it and much more about your personality. That's why we
+                have everything in our network: from absolute newcomers who are
+                just trying out their first business idea to founders who have
+                already completed several rounds of financing. It is important
+                to us that we can all learn from each other.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc2" id="#accLink2">How can I become a member?</a>
+            <section class="content" id="acc2" aria-labelledby="accLink2">
+              <p>
+                It's very simple. You can simply register on this page and
+                create an account. We'll take a look at your profile and decide
+                whether you're a good fit for us. As soon as your account is
+                confirmed, you can browse our network and register for events.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc3" id="#accLink3"
+              >Do I have to have taken part in "StartUp Teens" or "Jugend
+              gründet" to become a member?</a
+            >
+            <section class="content" id="acc3" aria-labelledby="accLink3">
+              <p>
+                No. Although many of our members have taken part in various
+                start-up competitions, this is not a must.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc4" id="#accLink4"
+              >What does it cost to take part in YFN events?</a
+            >
+            <section class="content" id="acc4" aria-labelledby="accLink4">
+              <p>
+                A ticket for the YFN Event #5 will cost 40 €. We do not earn
+                anything from it; the entrance fee is only to cover part of the
+                costs. Included in the 40 € are the entrance fee, all drinks,
+                snacks and all food for the event weekend.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc5" id="#accLink5"
+              >Does the Young Founders Network earn money?</a
+            >
+            <section class="content" id="acc5" aria-labelledby="accLink5">
+              <p>
+                No. The Young Founders Network is explicitly non-profit. Our
+                goal is to create a cool environment to learn new things,
+                exchange ideas with like-minded people and meet new people.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc5" id="#accLink5"
+              >Wie meldet man sich zum YFN Event an?</a
+            >
+            <section class="content" id="acc5" aria-labelledby="accLink5">
+              <p>
+                Ungefähr 3 Wochen vor dem Event öffnen wir dann die
+                Registrierung und du kannst dir auf der jeweiligen
+                Event-Seite(YFN Event #5) ein Ticket kaufen. Wir bitten dich nur
+                ein Ticket zu kaufen, wenn du auch wirklich kommen kannst, damit
+                du niemanden anderen einen Platz wegnimmst.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc6" id="#accLink6"
+              >Is the YFN linked to a political party?</a
+            >
+
+            <section class="content" id="acc6" aria-labelledby="accLink6">
+              <p>
+                No. The Young Founders Network is independent of any party
+                politics. We do represent various political demands, such as the
+                desire for a simplified, less bureaucratic start-up process, but
+                we are explicitly not a political organization.
+              </p>
+            </section>
+          </li>
+          <li>
+            <a href="#acc7" id="#accLink7"
+              >Where can I find out when & where the next YFN event will take
+              place?</a
+            >
+            <section class="content" id="acc7" aria-labelledby="accLink7">
+              <p>
+                We organize an event approximately every 6 months. We announce
+                new dates in good time in our Whatsapp group. Feel free to join
+                if you want to stay up-to-date. Of course, you can also just
+                check our website regularly.
+              </p>
+            </section>
+          </li>
+        </ul>
+      </section>
     </main>
     <main-footer></main-footer>
   </body>
