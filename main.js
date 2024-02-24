@@ -3,20 +3,20 @@ class Header extends HTMLElement {
     this.innerHTML = `
       <header class="header">
       <div class="icon">
-      <img src="assets/YFN icon.png" />
+      <img src="../assets/YFN icon.png" />
       <h1>Success Tracker</h1>
     </div>
         <nav class="navbar">
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="/index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">About YFN</a>
+                    <a href="/pages/about.html" class="nav-link">About YFN</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Team</a>
+                    <a href="/pages/team.html" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Be Part of</a>
