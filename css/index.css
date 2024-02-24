@@ -2,20 +2,17 @@
 body {
   background: #ffff;
   color: #111111;
-  position: relative;
   min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
-}
-html {
-  font-size: 62.5%;
-  font-family: "Helvetica", sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 /* Header */
 header {
   display: flex;
+  background-color: #fff;
   justify-content: space-between;
   align-items: center;
   padding: 0 5rem; /* X-5rem padding (left and right) */
@@ -51,8 +48,17 @@ a {
   color: #91880c;
 }
 
+h3 {
+  font-size: 32px;
+}
+
 .header {
   border-bottom: 1px solid #e2e8f0;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .navbar {
@@ -98,6 +104,7 @@ a {
 
 /* Main */
 main {
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -157,10 +164,93 @@ main {
 .growing-search .submit button:hover {
   color: #d4c600;
 }
+.card-container {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 2rem;
+  max-width: 100rem;
+  border-radius: 1rem;
+}
+
+.card-source {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-thumbnail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 25%;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.card-thumbnail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-image-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.card-name {
+  padding-top: 1rem;
+  font-weight: bolder;
+  font-size: larger;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+  padding: 0 16px;
+}
+
+.card-source {
+  flex-basis: 25%;
+  justify-items: center;
+  align-items: center;
+}
+
+.card-source-name {
+  margin-bottom: 8px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-source-button {
+  padding: 8px 16px;
+  background-color: #d4c600;
+  color: black;
+  border: none;
+  font-weight: bold;
+  width: 8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-source-button:hover {
+  background-color: #feec01;
+}
 
 /* Footer */
 footer {
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
