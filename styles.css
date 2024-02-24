@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Helvetica&display=swap");
 body {
   background: #ffff;
   color: #111111;
@@ -10,7 +10,7 @@ body {
 }
 html {
   font-size: 62.5%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 /* Header */
@@ -33,7 +33,7 @@ header {
 }
 
 .icon h1 {
-  font-weight: 900;
+  font-weight: bold;
   font-size: 32px;
 }
 * {
@@ -48,6 +48,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #91880c;
 }
 
 .header {
@@ -95,17 +96,70 @@ a {
   color: #d4c600;
 }
 
-.nav-logo {
-  font-size: 2.1rem;
-  font-weight: 500;
-  color: #482ff7;
-}
-
 /* Main */
-main{
-
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 5rem 5rem 5rem 5rem;
 }
 
+
+
+
+.growing-search {
+  padding: 5px 5px 5px 7px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.growing-search div {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.growing-search .input input {
+  margin-right: 0;
+  border: none;
+  font-size: inherit;
+  transition: width 200ms;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  width: 70px;
+  color: #aaa;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.growing-search .input input:focus {
+  width: 200px;
+}
+
+.growing-search .submit button {
+  margin-left: 0;
+  border: none;
+  font-size: 1.15em;
+  color: #aaa;
+  background-color: #fff;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  transition: color 200ms;
+}
+
+.growing-search .input input:hover,
+.growing-search .submit button:hover {
+  cursor: pointer;
+}
+
+.growing-search .input input:focus,
+.growing-search .submit button:focus {
+  outline: none;
+}
+
+.growing-search .submit button:hover {
+  color: #3498db;
+}
 
 /* Footer */
 footer {
