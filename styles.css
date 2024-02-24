@@ -2,9 +2,15 @@
 body {
   font-family: "Helvetica", sans-serif;
   background: #ffff;
-  flex: auto;
   color: #111111;
+  position: relative; 
+  min-height: 100vh; 
+  margin: 0; 
+  display: flex;
+  flex-direction: column; 
 }
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -91,4 +97,18 @@ nav a:nth-child(5) {
 nav a:nth-child(5):hover ~ .animation {
   width: 120px;
   left: 470px;
+}
+/* Main */
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 1rem;
+
 }
