@@ -3,11 +3,11 @@ body {
   font-family: "Helvetica", sans-serif;
   background: #ffff;
   color: #111111;
-  position: relative; 
-  min-height: 100vh; 
-  margin: 0; 
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 /* Header */
@@ -110,5 +110,11 @@ footer {
   justify-content: center;
   background: white;
   padding: 1rem;
+}
 
+a {
+  color: #b3a700;
+}
+a:hover {
+  color: #d4c600;
 }
