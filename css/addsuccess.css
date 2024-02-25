@@ -79,6 +79,7 @@ select {
 
 input[type="text"]:focus {
   border-color: #91880c;
+  border:#91880c;
   animation: pulse 1s infinite;
 }
 
@@ -89,6 +90,7 @@ select:focus {
 
 .submit-button {
   width: 100%;
+  font-weight: bold;
   background-color: #91880c;
   color: white;
   padding: 14px 20px;
