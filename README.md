@@ -16,9 +16,7 @@ This project is aimed to show all the successes that happened in the Young Found
 
 ### Built With
 
-- [![HTML]
-- [![CSS]
-- [![JavaScript]
+ ![](https://t3.ftcdn.net/jpg/03/21/24/30/360_F_321243084_GstfWflk1eTLlzUdRZ5mjoP5IG1iCc8J.jpg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,7 +59,7 @@ See the [open issues](https://github.com/joelheile/CODE-SE19/issues) for a full 
 
 ## Contact
 
-Joel - [@joelheile](https://twitter.com/joelheile) - joel.heil-escobar@@code.berlin.com
+Joel - [@joelheile](https://twitter.com/joelheile) - [joel@mail](mailto:joel.heil-escobar@code.berlin.com)
 
 Project Link: [https://github.com/joelheile/CODE-SE19](https://github.com/joelheile/CODE-SE19)
 
@@ -71,9 +69,8 @@ Project Link: [https://github.com/joelheile/CODE-SE19](https://github.com/joelhe
 
 ## Acknowledgments
 
-- [] Thanks to Samuel Boguslawski and the very insightful SE19 lecture
-- [] <a href="https://www.codecademy.com/">CodeCademy </a> was great to learn HTML & CSS
-- []()
+- Thanks to Samuel Boguslawski and the very insightful SE19 lecture
+-  <a href="https://www.codecademy.com/">CodeCademy </a> was great to learn HTML & CSS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
