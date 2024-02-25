@@ -38,6 +38,7 @@ label {
   cursor: text;
 }
 input {
+  display: flex;
   width: 100%;
   border: 0;
   outline: 0;
@@ -110,4 +111,12 @@ select:focus {
 }
 .explainer span {
   margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .input-field,
+    .form-container,
+    .explainer {
+      width: 100%;
+    }
 }

@@ -3,12 +3,16 @@
 }
 
 .welcome {
+  margin: 0 5rem;
   display: flex;
-  width: 50rem;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  max-width: 50rem;
 }
 .welcome img {
-  width: 30rem;
+  width: 25rem;
   border-radius: 20px;
 }
 .welcome h1 {
@@ -28,7 +32,11 @@
 }
 
 .tota11y-accordion {
-  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .tota11y-accordion > li > a {
@@ -42,7 +50,7 @@
   text-decoration: none;
 }
 .tota11y-accordion > li {
-  max-width: 800px;
+  max-width: 40rem;
   box-sizing: border-box;
   margin-top: 10px;
   border-radius: 1rem;
@@ -185,5 +193,13 @@ label {
     margin: 0.5rem 1rem 2rem 1rem;
     padding: 0.5rem;
     max-height: none;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .welcome{
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }

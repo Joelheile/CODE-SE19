@@ -268,7 +268,7 @@ footer {
   padding: 1rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1060px) {
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -280,6 +280,9 @@ footer {
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .icon h1 {
@@ -288,10 +291,26 @@ footer {
 
   .nav-menu.active {
     left: 0;
+    display: flex;
+    align-content: center;
   }
 
   .nav-item {
-    margin: 2.5rem 0;
+    align-self: center;
+    width: 100%;
+    height: 5rem;
+  }
+  
+
+  .nav-link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111111;
+    transition: color 0.3s;
+  }
+
+  .nav-item:hover .nav-link {
+    color: #d4c600;
   }
 
   .hamburger {
