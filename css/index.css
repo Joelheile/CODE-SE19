@@ -95,6 +95,10 @@ h3 {
   margin-left: 5rem;
 }
 
+.nav-item:hover {
+  color: #d4c600;
+}
+
 .nav-link {
   font-size: 1.3rem;
   font-weight: 600;
@@ -169,6 +173,7 @@ main {
 }
 .card-container {
   display: flex;
+  flex-direction: row;
   align-items: stretch;
   border: 1px solid #ccc;
   padding: 1rem;
@@ -304,5 +309,13 @@ footer {
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card-source-name {
+    margin-top: 40px;
   }
 }
