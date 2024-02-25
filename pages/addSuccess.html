@@ -23,12 +23,47 @@
         let's add some success 🎉
       </h1>
       <!--Input Bar-->
-      <form action="">
-        <div class="input-field">
-          <input type="text" id="input" required />
-          <label for="input">New Success:</label>
-        </div>
-      </form>
+
+      <div class="form-container">
+        <form action="/submit-form" method="post">
+          <label for="member-name">Who's success was it?</label>
+          <input
+            type="text"
+            id="member-name"
+            name="member-name"
+            placeholder="Enter member name..."
+            required
+          />
+
+          <label for="type">Select Type:</label>
+          <select id="type" name="type" required>
+            <option value="award">🎉 Award</option>
+            <option value="funding">💸 Funding</option>
+            <option value="article">🚀 Product Launch</option>
+            <option value="article">📢 Article</option></select
+          >
+          
+          <label for="media-name">Name of media  </label>
+          <input
+            type="text"
+            id="media-name"
+            name="media-name"
+            placeholder="Enter the name of the media..."
+            required
+          />
+
+          <label for="link-source">🔗 Enter link to the source </label>
+          <input
+            type="text"
+            id="link-source"
+            name="link-source"
+            placeholder="🔗 Enter the Link"
+            required
+          />
+
+          <input type="submit" value="Send Success" class="submit-button" />
+        </form>
+      </div>
       <!--Explanatory-->
       <div class="explainer">
         <ul>
@@ -43,6 +78,12 @@
             <p>
               <span class="sucessIcon">💸</span>
               <span>Secured funding round or another investment</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">🚀</span>
+              <span>New Product Launch</span>
             </p>
           </li>
           <li>
