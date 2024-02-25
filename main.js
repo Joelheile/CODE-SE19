@@ -22,7 +22,7 @@ class Header extends HTMLElement {
                     <a href="/pages/team.html" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://youngfounders.network" class="nav-link">Be Part of</a>
+                    <a href="https://youngfounders.network" class="nav-link">Be part of YFN</a>
                 </li>
             </ul>
             <div class="hamburger">
