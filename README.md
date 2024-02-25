@@ -12,13 +12,9 @@ Ideally it would be readable in an rss format, so that it can be implemented in 
 
 This project is aimed to show all the successes that happened in the Young Founders Network.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
- ![](https://t3.ftcdn.net/jpg/03/21/24/30/360_F_321243084_GstfWflk1eTLlzUdRZ5mjoP5IG1iCc8J.jpg)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![](https://t3.ftcdn.net/jpg/03/21/24/30/360_F_321243084_GstfWflk1eTLlzUdRZ5mjoP5IG1iCc8J.jpg)
 
 <!-- GETTING STARTED -->
 
@@ -32,15 +28,11 @@ To get a local copy up and running follow these simple example steps.
 1. Download Repo or clone it
 2. Open index.html file
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- USAGE EXAMPLES -->
 
 ## Goal
 
 The goal is to have a simple input UI so that everybody can add successes and then show it in a simple format.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
@@ -53,8 +45,6 @@ The goal is to have a simple input UI so that everybody can add successes and th
 
 See the [open issues](https://github.com/joelheile/CODE-SE19/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 
 ## Contact
@@ -63,16 +53,12 @@ Joel - [@joelheile](https://twitter.com/joelheile) - [joel@mail](mailto:joel.hei
 
 Project Link: [https://github.com/joelheile/CODE-SE19](https://github.com/joelheile/CODE-SE19)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
 
 - Thanks to Samuel Boguslawski and the very insightful SE19 lecture
--  <a href="https://www.codecademy.com/">CodeCademy </a> was great to learn HTML & CSS
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- <a href="https://www.codecademy.com/">CodeCademy </a> was great to learn HTML & CSS
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
