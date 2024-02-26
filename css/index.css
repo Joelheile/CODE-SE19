@@ -348,3 +348,10 @@ footer {
     margin-top: 40px;
   }
 }
+
+@media only screen and (max-width: 460px) {
+  .icon h1 {
+    font-size: small;
+  }
+}
+
