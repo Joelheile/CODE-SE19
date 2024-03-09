@@ -6,6 +6,7 @@ const app = express();
 app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
 app.use('/pages', express.static(path.join(__dirname, 'public/pages')));
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/components', express.static(path.join(__dirname, 'public/components')));
 const PORT = 3000;
 
 app.get("/", (req, res) => {
