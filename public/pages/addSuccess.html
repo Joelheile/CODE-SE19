@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/addsuccess.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>YFN Success Tracker</title>
+  </head>
+  <script type="module" src="../main.js"></script>
+
+  <body>
+    <main-header></main-header>
+
+    <main>
+      <h1>
+        <span>Amazing,</span>
+        let's add some success 🎉
+      </h1>
+      <!--Input Bar-->
+
+      <div class="form-container">
+        <form>
+
+          <input
+            type="text"
+            id="member-name"
+            name="member-name"
+            placeholder="Enter member name..."
+            required
+          />
+
+
+          <select id="type" name="type" required>
+            <option value="award">🎉 Award</option>
+            <option value="funding">💸 Funding</option>
+            <option value="article">🚀 Product Launch</option>
+            <option value="article">📢 Article</option></select
+          >
+          
+
+          <input
+            type="text"
+            id="media-name"
+            name="media-name"
+            placeholder="Enter the name of the media..."
+            required
+          />
+
+
+          <input
+            type="text"
+            id="link-source"
+            name="link-source"
+            placeholder="🔗 Enter the Link"
+            required
+          />
+
+          <input type="submit" value="Send Success" class="submit-button"  />
+        </form>
+      </div>
+      <!--Explanatory-->
+      <div class="explainer">
+        <ul>
+          <h2>A little helper on what successes to add</h2>
+          <li>
+            <p>
+              <span class="sucessIcon">🎉</span>
+              <span>Award or something else won</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">💸</span>
+              <span>Secured funding round or another investment</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">🚀</span>
+              <span>New Product Launch</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">📢</span>
+              <span
+                >Article published in a business magazin or another news
+                paper</span
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <main-footer></main-footer>
+  </body>
+</html>
