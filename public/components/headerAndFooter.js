@@ -62,7 +62,7 @@ class Footer extends HTMLElement {
     this.innerHTML = `    
     <footer>
     <span
-      >Made with 💛 by
+      >Made with 💛 in Berlin by
       <a href="https://github.com/Joelheile"> Joel Heil Escobar</a></span
     >
   </footer>  
