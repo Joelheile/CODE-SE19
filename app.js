@@ -1,7 +1,10 @@
 const express = require("express");
+
 const path = require("path");
 
 const app = express();
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'public/pages'));
 const PORT = 3000;
 
 // import static pages etc from public so that it can be called without having to put /public in url
@@ -14,9 +17,17 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: true }));
-app.post("/add", (request, response) => {
-  console.log("New Success Submition: ", request.body);
-  response.sendFile(path.join(__dirname, "public/pages/formSubmit.html"));
+app.post("/add-success", (request, response) => {
+  const name = request.body.name;
+  const type = request.body.type;
+  const media = request.body.media;
+  const description = request.body.description;
+  const articleLink = request.body.articleLink;
+  const imageLink = request.body.imageLink;
+  console.log("req body", request.body)
+  console.log("New Success Submission: ", name, type, media, articleLink, imageLink);
+
+  response.render('successSubmission', {name, type, media, articleLink, imageLink, description})
 });
 
 app.get("/search", (request, response) => {
