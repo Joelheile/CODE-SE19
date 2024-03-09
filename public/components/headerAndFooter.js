@@ -10,7 +10,7 @@ class Header extends HTMLElement {
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
                 <a href="/pages/addSuccess.html" class="nav-link">Add Success</a>

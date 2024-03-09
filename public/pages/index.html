@@ -19,14 +19,16 @@
     <main>
       <!--Search Bar-->
       <div class="growing-search">
-        <div class="input">
-          <input placeholder="Search" type="text" name="search" />
-        </div>
-        <div class="submit">
-          <button type="submit" name="go_search">
-            <span class="fa fa-search"></span>
-          </button>
-        </div>
+        <form action="/search" method="GET">
+          <div class="input">
+            <input placeholder="Search" type="text" name="query" />
+          </div>
+          <div class="submit">
+            <button type="submit">
+              <span class="fa fa-search"></span>
+            </button>
+          </div>
+        </form>
       </div>
       <!--Feed-->
       <div class="FeedView">
