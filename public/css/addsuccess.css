@@ -78,19 +78,31 @@ select {
 }
 
 input[type="text"]:focus {
-  border-color: #91880c;
-  border:#91880c;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 2px solid #91880c;
+  border-radius: 4px;
+  box-sizing: border-box;
   animation: pulse 1s infinite;
 }
 
 select:focus {
-  border-color: #91880c;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 2px solid #91880c;
+  border-radius: 4px;
+  box-sizing: border-box;
   animation: pulse 1s infinite;
 }
 
 .submit-button {
   width: 100%;
   font-weight: bold;
+  font-size: 18px;
   background-color: #91880c;
   color: white;
   padding: 14px 20px;
@@ -116,9 +128,9 @@ select:focus {
 }
 
 @media (max-width: 768px) {
-    .input-field,
-    .form-container,
-    .explainer {
-      width: 100%;
-    }
+  .input-field,
+  .form-container,
+  .explainer {
+    width: 100%;
+  }
 }
