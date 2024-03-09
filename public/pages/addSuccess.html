@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,43 +25,53 @@
       <!--Input Bar-->
 
       <div class="form-container">
-        <form action="/add" method="POST">
-
+        <form action="/success" method="POST">
           <input
             type="text"
-            id="member-name"
-            name="member-name"
+            id="name"
+            name="name"
             placeholder="Enter member name..."
             required
           />
-
 
           <select id="type" name="type" required>
             <option value="award">🎉 Award</option>
             <option value="funding">💸 Funding</option>
             <option value="article">🚀 Product Launch</option>
-            <option value="article">📢 Article</option></select
-          >
-          
-
+            <option value="article">📢 Article</option>
+          </select>
           <input
             type="text"
-            id="media-name"
-            name="media-name"
+            id="description"
+            name="description"
+            placeholder="Describe the success in a sentence..."
+            required
+          />
+          <input
+            type="text"
+            id="media"
+            name="media"
             placeholder="Enter the name of the media..."
             required
           />
 
-
           <input
             type="text"
-            id="link-source"
-            name="link-source"
-            placeholder="🔗 Enter the Link"
+            id="articleLink"
+            name="articleLink"
+            placeholder="🔗 Enter Link to article"
             required
           />
 
-          <button type="submit" value="Send Success" class="submit-button"  >Submit Success</button>
+          <input
+            type="text"
+            id="imageLink"
+            name="imageLink"
+            placeholder="📷 Enter Link to image"
+            required
+          />
+
+          <button type="submit" class="submit-button">Submit Success</button>
         </form>
       </div>
       <!--Explanatory-->

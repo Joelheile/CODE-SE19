@@ -19,8 +19,8 @@
   margin: 1rem 0;
 }
 
-.welcome p{
-    margin: 1rem 0;
+.welcome p {
+  margin: 1rem 0;
 }
 
 #welcome-text {
@@ -60,11 +60,14 @@
   box-shadow: 0px 0px 0px 0px #ffffff;
   display: grid;
   grid-template-rows: min-content 0fr;
-  transition: box-shadow 0.3s 0s ease,
+  transition:
+    box-shadow 0.3s 0s ease,
     grid-template-rows var(--ta11y-open-duration);
 }
 .tota11y-accordion > li:focus-within {
-  box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px #feec01;
+  box-shadow:
+    0 0 0 4px #ffffff,
+    0 0 0 6px #feec01;
 }
 .tota11y-accordion > li:has(.content:target) > a:before,
 .tota11y-accordion > li:has(.content:focus-within) > a:before {
@@ -100,7 +103,8 @@
   visibility: hidden;
   display: grid;
   overflow: hidden;
-  transition: margin var(--ta11y-open-duration) linear,
+  transition:
+    margin var(--ta11y-open-duration) linear,
     padding var(--ta11y-open-duration) linear;
   max-height: 200px;
 }
@@ -197,7 +201,7 @@ label {
 }
 
 @media only screen and (max-width: 1060px) {
-  .welcome{
+  .welcome {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;

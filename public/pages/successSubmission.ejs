@@ -1,0 +1,46 @@
+<!-- Is a template and therefore express variables can be used-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/addsuccess.css" />
+    <link rel="stylesheet" href="../css/basicContainer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>YFN Success Tracker</title>
+  </head>
+  <script type="module" src="../components/headerAndFooter.js"></script>
+
+  <body>
+    <main-header></main-header>
+    <h3></h3>
+    <main>
+      <div class="card-container">
+        <div class="card-thumbnail">
+          <img src="<%= imageLink %>" />
+          <div class="card-image-description">
+            <div class="card-icon">📣</div>
+            <h3 class="card-name"><%= name %></h3>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <p><%= description %></p>
+        </div>
+        <div class="card-source">
+          <h3 class="card-source-name"><%= media %></h3>
+          <a class="card-source-button" href="<%= articleLink %>">
+            Go to article</a
+          >
+        </div>
+      </div>
+    </main>
+    <main-footer></main-footer>
+  </body>
+</html>

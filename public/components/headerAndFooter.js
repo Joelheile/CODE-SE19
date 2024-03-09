@@ -3,7 +3,9 @@ class Header extends HTMLElement {
     this.innerHTML = `
       <header class="header">
       <div class="icon">
+      <a href="/">
       <img src="../assets/YFN icon.png" />
+      </a>
       <h1>Success Tracker</h1>
     </div>
         <nav class="navbar">
@@ -13,17 +15,20 @@ class Header extends HTMLElement {
                     <a href="/" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                <a href="/pages/addSuccess.html" class="nav-link">Add Success</a>
+                <a href="/addSuccess" class="nav-link">Add Success</a>
             </li>
                 <li class="nav-item">
-                    <a href="/pages/about.html" class="nav-link">About YFN</a>
+                    <a href="/about" class="nav-link">About YFN</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/pages/team.html" class="nav-link">Team</a>
+                    <a href="/team" class="nav-link">Team</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://youngfounders.network" class="nav-link">Be part of YFN</a>
                 </li>
+                <li class="nav-item">
+                <a href="/login" class="nav-link">Login</a>
+            </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
