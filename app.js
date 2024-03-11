@@ -13,7 +13,7 @@ app.use("/pages", express.static(path.join(__dirname, "public/pages")));
 app.use("/css", express.static(path.join(__dirname, "public/css")));
 app.use(
   "/components",
-  express.static(path.join(__dirname, "public/components")),
+  express.static(path.join(__dirname, "public/components"))
 );
 
 app.use(express.urlencoded({ extended: true }));
@@ -60,10 +60,23 @@ app.post("/login", (request, response) => {
   const password = request.body.password;
   console.log("Mail: ", mail);
   console.log("Password: ", password);
-  response.sendFile(path.join(__dirname, "public/pages/welcome.html"));
+  response.redirect("/welcome");
 });
+
+app.post("/register", (request, response) => {
+  const mail = request.body.mail;
+  const password = request.body.password;
+  console.log("Mail: ", mail);
+  console.log("Password: ", password);
+  response.redirect("/welcome");
+});
+
 app.get("/register", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/register.html"));
+});
+
+app.get("/welcome", (request, response) => {
+  response.sendFile(path.join(__dirname, "/public/pages/welcome.html"));
 });
 
 app.get("/", (request, response) => {
@@ -77,7 +90,6 @@ app.get("/addsuccess", (request, response) => {
 app.get("/about", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/about.html"));
 });
-
 app.get("/team", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/team.html"));
 });
