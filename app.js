@@ -1,4 +1,5 @@
 const express = require("express");
+
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 
@@ -6,6 +7,14 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public/pages"));
 const PORT = 3000;
+
+const mongoose = require('mongoose');
+mongodb://127.0.0.1:27017
+mongoose.connect('mongodb://127.0.0.1:27017/successtracker')
+
+mongoose.connect('mongodb://127.0.0.1:27017/successtracker')
+  .then(() => console.log('💽 Database connected'))
+  .catch(error => console.error(error))
 
 // import static pages etc from public so that it can be called without having to put /public in url
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
