@@ -66,8 +66,8 @@ input:valid ~ label {
   margin: 0 auto;
 }
 
-input[type="text"],
-input[type="password"],
+
+input,
 select {
   width: 100%;
   padding: 10px;
