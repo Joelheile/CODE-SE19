@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>YFN Success Tracker</title>
+  </head>
+  <script type="module" src="components/headerAndFooter.js"></script>
+
+  <body>
+    <main-header></main-header>
+
+    <main>
+      <!--Search Bar-->
+      <div class="growing-search">
+        <form action="/successes/search" method="GET">
+          <div class="input">
+            <input placeholder="Search" type="text" name="query" />
+          </div>
+          <div class="submit">
+            <button type="submit">
+              <span class="fa fa-search"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <!--Feed-->
+      <div class="FeedView">
+      <% for(let i = 0; i < successes.length; i++) { %>
+        <div class="card-container">
+          <div class="card-thumbnail">
+          <img src="<%= successes[i].imageLink %>" />
+          <div class="card-image-description">
+            <div class="card-icon">📣</div>
+            <h3 class="card-name"><%=  successes[i].name %></h3>
+          </div>
+        </div>
+        <div class="card-content">
+          <p><%= successes[i].description %></p>
+        </div>
+        <div class="card-source">
+          <h3 class="card-source-name"><%= successes[i].media %></h3>
+          <a class="card-source-button" href="<%= successes[i].articleLink %>">
+            Go to article</a
+          >
+        </div>
+
+        </div>
+      <% } %>
+      </div>
+
+    
+    </main>
+    <main-footer></main-footer>
+  </body>
+</html>

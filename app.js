@@ -20,12 +20,6 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 
 
-app.get("/search", (request, response) => {
-  const query = request.query.query;
-  response.send(`You searched for: ${query}`);
-});
-
-// Will later be replaced by directly authorizing the user when they click first on homepage
 app.get("/login", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/login.html"));
 });
@@ -110,18 +104,57 @@ app.post("/success", async (request, response) => {
   }
 });
 
-app.get('/', async (request, response) => {
-  const successes = await Success.find({}).exec()
+app.get("/", (request, response) => {
+  response.redirect("/successes")
+});
 
-  response.render('/', { 
-    successes: successes,
-  })
-})
+app.get("/successes", async (request, response) => {
+  try {
+    const successes = await Success.find({}).exec();
 
-app.get("/success/:id", (request, response) => {
-  const successSubmission = successSubmissions[request.params.id];
+    response.render("successes", {
+      successes: successes,
+    });
+  } catch (error) {
+    console.error(error);
+    response.render("successes", {
+      successes: [],
+    });
+  }
+});
+
+app.get("/successes/search", async (request, response) => {
+  const q = request.query.q;
+
+  try {
+    const successes = await Success.find({ name: { $regex: new RegExp(q, 'i') } }).exec();
+
+    response.render("successes", {
+      successes: successes,
+    });
+  } catch (error) {
+    console.error(error);
+    response.render("successes", {
+      successes: [],
+    });
+  }
+});
+
+app.get("/success/:id", async (request, response) => {
   console.log(successSubmissions);
   response.render("successSubmission", successSubmission);
+
+  try {
+    const id = request.params.id;
+    const success = await Success.findOne({ id: id }).exec();
+
+    response.render(`/success:${id}`, {
+      success: success,
+    });
+  } catch (error) {
+    console.error(error);
+    response.status(404).send("Could not find the success you're looking for.");
+  }
 });
 
 // app.post("/success", (request, response) => {
