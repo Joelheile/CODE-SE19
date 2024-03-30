@@ -94,6 +94,7 @@ app.post("/success", async (request, response) => {
       description: request.body.description,
       articleLink: request.body.articleLink,
       imageLink: request.body.imageLink,
+      createdAt: new Date(),
     });
     await success.save();
     response.redirect("");
@@ -110,7 +111,7 @@ app.get("/", (request, response) => {
 
 app.get("/successes", async (request, response) => {
   try {
-    const successes = await Success.find({}).exec();
+    const successes = await Success.find({}).sort({ createdAt: 1 }).exec();
 
     response.render("successes", {
       successes: successes,
@@ -124,11 +125,10 @@ app.get("/successes", async (request, response) => {
 });
 
 app.get("/successes/search", async (request, response) => {
-  const q = request.query.q;
+  const query = request.query.q;
 
   try {
-    const successes = await Success.find({ name: { $regex: new RegExp(q, 'i') } }).exec();
-
+    const successes = await Success.find({ name: { $regex: new RegExp(query, 'i') } }).exec();  // regex = case insensitive search
     response.render("successes", {
       successes: successes,
     });
@@ -139,6 +139,8 @@ app.get("/successes/search", async (request, response) => {
     });
   }
 });
+
+
 
 app.get("/success/:id", async (request, response) => {
   console.log(successSubmissions);
