@@ -184,7 +184,7 @@ response.redirect(`/successes`)
 // delete success
 app.get('/success/:id/delete', async (request, response) => {
   try {
-    await Cookie.findOneAndDelete({ id: request.params.id })
+    await Success.findOneAndDelete({ id: request.params.id })
     
     response.redirect('/successes')
   }catch (error) {
@@ -192,3 +192,5 @@ app.get('/success/:id/delete', async (request, response) => {
     response.send('Error: No sucess was deleted.')
   }
 })
+
+//TODO more functions that would be good for se01

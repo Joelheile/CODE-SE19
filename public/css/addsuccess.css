@@ -11,10 +11,6 @@
   text-align: center;
 }
 
-form {
-  margin: 3rem 0rem;
-}
-
 h1 span {
   color: #91880c;
 }
@@ -66,7 +62,6 @@ input:valid ~ label {
   margin: 0 auto;
 }
 
-
 input,
 select {
   width: 100%;
@@ -112,6 +107,23 @@ select:focus {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.delete-button {
+  width: 25%;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #e62222;
+  margin-bottom: 2rem;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.delete-button:hover {
+  background: #ff3636;
+}
+
 
 .submit-button:hover {
   background-color: #d4c600;
