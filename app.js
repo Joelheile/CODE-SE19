@@ -1,3 +1,4 @@
+const dotenv = require("dotenv/config");
 const express = require("express");
 
 const { v4: uuidv4 } = require("uuid");
@@ -6,12 +7,8 @@ const path = require("path");
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public/pages"));
-const PORT = 3000;
 
-// import static pages etc from public so that it can be called without having to put /public in url
-
-app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(__dirname + "/public"));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -53,16 +50,14 @@ app.get("/team", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/team.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`👋 Started server on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`👋 Started server on port ${process.env.PORT}`);
 });
 
 const mongoose = require("mongoose");
 //127.0.0.1:27017
-mongodb: mongoose.connect("mongodb://127.0.0.1:27017/successtracker");
-
-mongoose
-  .connect("mongodb://127.0.0.1:27017/successtracker")
+mongodb: mongoose
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("💽 Database connected"))
   .catch((error) => console.error(error));
 
@@ -92,11 +87,10 @@ app.post("/success", async (request, response) => {
       updatedAt: new Date(),
     });
     await success.save();
-    response.redirect("");
-    //response.redirect(`/success/${id}`);
+    response.redirect("/successes");
   } catch (error) {
     console.error(error);
-    response.send("Error: The success could not be created.");
+    response.send(`Error: The success could not be created.\n ${error}`);
   }
 });
 
@@ -121,11 +115,11 @@ app.get("/successes", async (request, response) => {
 
 app.get("/successes/search", async (request, response) => {
   const query = request.query.query;
-  console.log("query",query)
+  console.log("query", query);
   try {
     const success = await Success.find({ name: query })
       .collation({ locale: "en", strength: 2 }) // case insensitive search
-      .exec(); 
+      .exec();
     response.render("successes", {
       success: success,
     });
@@ -150,47 +144,49 @@ app.get("/success/:id", async (request, response) => {
     });
   } catch (error) {
     console.error(error);
-    response.status(404).send("Could not find the success you're looking for.");
+    response
+      .status(404)
+      .send("Oh no, 404 🫣 Could not find the success you're looking for.");
   }
 });
 
-app.get('/success/:id/edit', async (request, response) => {
+app.get("/success/:id/edit", async (request, response) => {
   try {
-    const id = request.params.id
-    const success = await Success.findOne({ id: id }).exec()
-    if(!success) throw new Error('Success not found')
+    const id = request.params.id;
+    const success = await Success.findOne({ id: id }).exec();
+    if (!success)
+      throw new Error("We couldn't finde the success you're looking for.");
 
-    response.render('success', { success: success })
-  }catch(error) {
-    console.error(error)
-    response.status(404).send("Could not find the success you're looking for.")
+    response.render("success", { success: success });
+  } catch (error) {
+    console.error(error);
+    response
+      .status(404)
+      .send(`Could not find the success you're looking for.\n ${error}`);
   }
-})
+});
 
-app.post('/success/:id', async (request, response) => {
+app.post("/success/:id", async (request, response) => {
   try {
- const success = await Success.findOneAndUpdate(
-  { id: request.params.id }, 
-  request.body,
-)
-response.redirect(`/successes`)
-
-  }catch (error) {
-    console.error(error)
-    response.send('Error: The success could not be created.')
+    const success = await Success.findOneAndUpdate(
+      { id: request.params.id },
+      request.body,
+    );
+    response.redirect(`/successes`);
+  } catch (error) {
+    console.error(error);
+    response.send(`Error: The success could not be created. \n ${error}`);
   }
-})
+});
 
 // delete success
-app.get('/success/:id/delete', async (request, response) => {
+app.get("/success/:id/delete", async (request, response) => {
   try {
-    await Success.findOneAndDelete({ id: request.params.id })
-    
-    response.redirect('/successes')
-  }catch (error) {
-    console.error(error)
-    response.send('Error: No sucess was deleted.')
-  }
-})
+    await Success.findOneAndDelete({ id: request.params.id });
 
-//TODO more functions that would be good for se01
+    response.redirect("/successes");
+  } catch (error) {
+    console.error(error);
+    response.send(`Error: The sucesses couldn't be deleted.\n ${error}`);
+  }
+});
