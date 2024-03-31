@@ -9,16 +9,11 @@ app.set("views", path.join(__dirname, "public/pages"));
 const PORT = 3000;
 
 // import static pages etc from public so that it can be called without having to put /public in url
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
-app.use("/pages", express.static(path.join(__dirname, "public/pages")));
-app.use("/css", express.static(path.join(__dirname, "public/css")));
-app.use(
-  "/components",
-  express.static(path.join(__dirname, "public/components"))
-);
+
+app.use(express.static(__dirname + '/public'));
+
 
 app.use(express.urlencoded({ extended: true }));
-
 
 app.get("/login", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/login.html"));
@@ -94,7 +89,7 @@ app.post("/success", async (request, response) => {
       description: request.body.description,
       articleLink: request.body.articleLink,
       imageLink: request.body.imageLink,
-      createdAt: new Date(),
+      updatedAt: new Date(),
     });
     await success.save();
     response.redirect("");
@@ -106,45 +101,45 @@ app.post("/success", async (request, response) => {
 });
 
 app.get("/", (request, response) => {
-  response.redirect("/successes")
+  response.redirect("/successes");
 });
 
 app.get("/successes", async (request, response) => {
   try {
-    const successes = await Success.find({}).sort({ createdAt: 1 }).exec();
+    const success = await Success.find({}).sort({ updatedAt: 1 }).exec();
 
     response.render("successes", {
-      successes: successes,
+      success: success,
     });
   } catch (error) {
     console.error(error);
     response.render("successes", {
-      successes: [],
+      success: [],
     });
   }
 });
 
 app.get("/successes/search", async (request, response) => {
-  const query = request.query.q;
-
+  const query = request.query.query;
+  console.log("query",query)
   try {
-    const successes = await Success.find({ name: { $regex: new RegExp(query, 'i') } }).exec();  // regex = case insensitive search
+    const success = await Success.find({ name: query })
+      .collation({ locale: "en", strength: 2 }) // case insensitive search
+      .exec(); 
     response.render("successes", {
-      successes: successes,
+      success: success,
     });
   } catch (error) {
     console.error(error);
-    response.render("successes", {
-      successes: [],
+    response.render("success", {
+      succes: [],
     });
   }
 });
 
-
-
+// pages for showing single success and editing it
 app.get("/success/:id", async (request, response) => {
-  console.log(successSubmissions);
-  response.render("successSubmission", successSubmission);
+  response.render("success", success);
 
   try {
     const id = request.params.id;
@@ -159,21 +154,41 @@ app.get("/success/:id", async (request, response) => {
   }
 });
 
-// app.post("/success", (request, response) => {
-//   const id = uuidv4();
-//   const name = request.body.name;
-//   const type = request.body.type;
-//   const media = request.body.media;
-//   const description = request.body.description;
-//   const articleLink = request.body.articleLink;
-//   const imageLink = request.body.imageLink;
+app.get('/success/:id/edit', async (request, response) => {
+  try {
+    const id = request.params.id
+    const success = await Success.findOne({ id: id }).exec()
+    if(!success) throw new Error('Success not found')
 
-//   successSubmissions[id] = {
-//     name,
-//     type,
-//     media,
-//     articleLink,
-//     imageLink,
-//     description,
-//   };
-// });
+    response.render('success', { success: success })
+  }catch(error) {
+    console.error(error)
+    response.status(404).send("Could not find the success you're looking for.")
+  }
+})
+
+app.post('/success/:id', async (request, response) => {
+  try {
+ const success = await Success.findOneAndUpdate(
+  { id: request.params.id }, 
+  request.body,
+)
+response.redirect(`/successes`)
+
+  }catch (error) {
+    console.error(error)
+    response.send('Error: The success could not be created.')
+  }
+})
+
+// delete success
+app.get('/success/:id/delete', async (request, response) => {
+  try {
+    await Cookie.findOneAndDelete({ id: request.params.id })
+    
+    response.redirect('/successes')
+  }catch (error) {
+    console.error(error)
+    response.send('Error: No sucess was deleted.')
+  }
+})

@@ -4,7 +4,7 @@ class Header extends HTMLElement {
       <header class="header">
       <div class="icon">
       <a href="/">
-      <img src="../assets/YFN icon.png" />
+      <img src="/assets/YFN icon.png" />
       </a>
       <h1>Success Tracker</h1>
     </div>

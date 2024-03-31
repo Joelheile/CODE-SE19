@@ -1,9 +1,10 @@
+<!-- Success Feed -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -32,26 +33,42 @@
       </div>
       <!--Feed-->
       <div class="FeedView">
-      <% for(let i = 0; i < successes.length; i++) { %>
+        <h2>
+          <span>Amazing,</span> let's see some success 🎉
+        </h2>
+      <% for(let i = 0; i < success.length; i++) { %>
+        
         <div class="card-container">
           <div class="card-thumbnail">
-          <img src="<%= successes[i].imageLink %>" />
+          <img src="<%= success[i].imageLink %>" />
           <div class="card-image-description">
             <div class="card-icon">📣</div>
-            <h3 class="card-name"><%=  successes[i].name %></h3>
+            <h3 class="card-name"><%=  success[i].name %></h3>
+            
           </div>
+         
         </div>
         <div class="card-content">
-          <p><%= successes[i].description %></p>
+          <p><%= success[i].description %></p>
+          
         </div>
+
         <div class="card-source">
-          <h3 class="card-source-name"><%= successes[i].media %></h3>
-          <a class="card-source-button" href="<%= successes[i].articleLink %>">
+          <div>
+          <h3 class="card-source-name"><%= success[i].media %></h3>
+          <a class="card-source-button" href="<%= success[i].articleLink %>">
             Go to article</a
           >
         </div>
+          <div>
+          <a href="/success/<%= success[i].id %>/edit">
+            ✍🏻 </a>
+          </div>
+          
+        </div>
 
         </div>
+
       <% } %>
       </div>
 
