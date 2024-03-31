@@ -28,13 +28,9 @@
             <div class="input">
               <input placeholder="Search" type="text" name="query" />
             </div>
-            <div class="submit">
-              <button type="submit">
-                <span class="fa fa-search"></span>
-              </button>
-            </div>
           </form>
         </div>
+      <% } %>
 
         <!--Feed-->
         <% for(let i = 0; i < success.length; i++) { %>
@@ -63,9 +59,9 @@
               </div>
             </div>
           </div>
-        <% } %>
-      <% } %>
-    </main>
-    <main-footer></main-footer>
-  </body>
-</html>
+
+          <% } %>
+        </main>
+        <main-footer></main-footer>
+      </body>
+    </html>
