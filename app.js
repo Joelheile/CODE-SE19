@@ -12,29 +12,6 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/login", (request, response) => {
-  response.sendFile(path.join(__dirname, "/public/pages/login.html"));
-});
-app.post("/login", (request, response) => {
-  const mail = request.body.mail;
-  const password = request.body.password;
-  console.log("Mail: ", mail);
-  console.log("Password: ", password);
-  response.redirect("/welcome");
-});
-
-app.post("/register", (request, response) => {
-  const mail = request.body.mail;
-  const password = request.body.password;
-  console.log("Mail: ", mail);
-  console.log("Password: ", password);
-  response.redirect("/welcome");
-});
-
-app.get("/register", (request, response) => {
-  response.sendFile(path.join(__dirname, "/public/pages/register.html"));
-});
-
 app.get("/welcome", (request, response) => {
   response.sendFile(path.join(__dirname, "/public/pages/welcome.html"));
 });
@@ -55,7 +32,6 @@ app.listen(process.env.PORT, () => {
 });
 
 const mongoose = require("mongoose");
-//127.0.0.1:27017
 mongodb: mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("💽 Database connected"))

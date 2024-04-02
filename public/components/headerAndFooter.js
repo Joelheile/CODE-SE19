@@ -26,9 +26,7 @@ class Header extends HTMLElement {
                 <li class="nav-item">
                     <a href="https://youngfounders.network" class="nav-link">Be part of YFN</a>
                 </li>
-                <li class="nav-item">
-                <a href="/login" class="nav-link">Login</a>
-            </li>
+               
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

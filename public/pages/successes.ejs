@@ -38,7 +38,18 @@
             <div class="card-thumbnail">
               <img src="<%= success[i].imageLink %>" />
               <div class="card-image-description">
-                <div class="card-icon">📣</div>
+                <div class="card-icon">
+                  <% if (success[i].type === 'award') { %>
+                    🎉
+                  <% } else if (success[i].type === 'funding') { %>
+                    💸
+                  <% } else if (success[i].type === 'launch') { %>
+                    🚀
+                  <% } else if (success[i].type === 'article') { %>
+                    📢
+                  <% } %>
+                </div>
+                 
                 <h3 class="card-name"><%=  success[i].name %></h3>
               </div>
             </div>
