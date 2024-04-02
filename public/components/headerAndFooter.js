@@ -4,7 +4,7 @@ class Header extends HTMLElement {
       <header class="header">
       <div class="icon">
       <a href="/">
-      <img src="../assets/YFN icon.png" />
+      <img src="/assets/YFN icon.png" />
       </a>
       <h1>Success Tracker</h1>
     </div>
@@ -26,9 +26,7 @@ class Header extends HTMLElement {
                 <li class="nav-item">
                     <a href="https://youngfounders.network" class="nav-link">Be part of YFN</a>
                 </li>
-                <li class="nav-item">
-                <a href="/login" class="nav-link">Login</a>
-            </li>
+               
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

@@ -1,0 +1,114 @@
+<!-- Single Success View -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/addSuccess.css" />
+    <link rel="stylesheet" href="/css/basicContainer.css" />
+
+    <title>Edit Success</title>
+  </head>
+
+  <script type="module" src="/components/headerAndFooter.js"></script>
+  <body>
+    <main-header></main-header>
+
+    <main>
+      <div class="form-container">
+        <form action="/success/<%= success.id %>" method="POST">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="<%= success.name %>"
+            placeholder="Enter member name..."
+            required
+          />
+
+          <select id="type" name="type"  required>
+            <option value="award">🎉 Award</option>
+            <option value="funding">💸 Funding</option>
+            <option value="launch">🚀 Product Launch</option>
+            <option value="article">📢 Article</option>
+          </select>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            value="<%= success.description %>"
+            placeholder="Describe the success in a sentence..."
+            required
+          />
+          <input
+            type="text"
+            id="media"
+            name="media"
+            value="<%= success.media %>"
+            placeholder="Enter the name of the media..."
+            required
+          />
+
+          <input
+            type="url"
+            id="articleLink"
+            name="articleLink"
+            value="<%= success.articleLink %>"
+            placeholder="🔗 Enter Link to article"
+            required
+          />
+
+          <input
+            type="url"
+            id="imageLink"
+            name="imageLink"
+            value="<%= success.imageLink %>"
+            placeholder="📷 Enter Link to image"
+            required
+          />
+
+          <button type="submit" class="submit-button">Update Success</button>
+        </form>
+        <form action="/success/<%= success.id %>/delete" method="GET">
+          <button type="submit" class="delete-button">Delete entry 🫣</button>
+        </form>
+      </div>
+
+      <!--Explanatory-->
+      <div class="explainer">
+        <ul>
+          <h2>A little helper on what successes to add</h2>
+          <li>
+            <p>
+              <span class="sucessIcon">🎉</span>
+              <span>Award or something else won</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">💸</span>
+              <span>Secured funding round or another investment</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">🚀</span>
+              <span>New Product Launch</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="sucessIcon">📢</span>
+              <span
+                >Article published in a business magazin or another news
+                paper</span
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <main-footer></main-footer>
+  </body>
+</html>

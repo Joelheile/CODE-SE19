@@ -1,0 +1,78 @@
+<!-- Success Feed -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>YFN Success Tracker</title>
+  </head>
+  <script type="module" src="../components/headerAndFooter.js"></script>
+
+  <body>
+    <main-header></main-header>
+
+    <main>
+      <!--Case when no success is in database-->
+      <% if (success.length == 0){ %>
+        <h3>Time to <a href="/addsuccess"> add </a> new entries, right? </h3>
+      <% } else { %>
+        <!--Search Bar-->
+        <div class="growing-search">
+          <form action="/successes/search" method="GET">
+            <div class="input">
+              <input placeholder="Search" type="text" name="query" />
+            </div>
+          </form>
+        </div>
+      <% } %>
+
+        <!--Feed-->
+        <% for(let i = 0; i < success.length; i++) { %>
+          <div class="card-container">
+            <div class="card-thumbnail">
+              <img src="<%= success[i].imageLink %>" />
+              <div class="card-image-description">
+                <div class="card-icon">
+                  <% if (success[i].type === 'award') { %>
+                    🎉
+                  <% } else if (success[i].type === 'funding') { %>
+                    💸
+                  <% } else if (success[i].type === 'launch') { %>
+                    🚀
+                  <% } else if (success[i].type === 'article') { %>
+                    📢
+                  <% } %>
+                </div>
+                 
+                <h3 class="card-name"><%=  success[i].name %></h3>
+              </div>
+            </div>
+            <div class="card-content">
+              <p><%= success[i].description %></p>
+            </div>
+            <div class="card-source">
+              <div>
+                <h3 class="card-source-name"><%= success[i].media %></h3>
+                <a class="card-source-button" href="<%= success[i].articleLink %>">
+                  Go to article
+                </a>
+              </div>
+              <div>
+                <a href="/success/<%= success[i].id %>/edit">
+                  ✍🏻
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <% } %>
+        </main>
+        <main-footer></main-footer>
+      </body>
+    </html>

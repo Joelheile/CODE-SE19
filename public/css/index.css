@@ -185,7 +185,9 @@ main {
 .card-source {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 0rem;
 }
 
 .card-thumbnail {
