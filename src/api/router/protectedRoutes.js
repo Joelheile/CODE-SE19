@@ -120,7 +120,7 @@ router.get("/success/:id/edit", async (request, response) => {
     response.render("success", { success: success });
   } catch (error) {
     console.error(error);
-    response.status(500).redirect("/successfeed");
+    response.status(500).redirect("/successfeed")
   }
 });
 
@@ -139,14 +139,12 @@ router.post("/success/:id", async (request, response) => {
 });
 
 
-
-
 // middleware for deleting input
-const methodOverride = require("method-override");
-router.use(methodOverride("_method"));
+const methodOverride = require('method-override');
+router.use(methodOverride('_method'));
 
 // delete success
-router.delete("/success/:id", async (request, response) => {
+router.delete("/success/:id/delete", async (request, response) => {
   const id = request.params.id;
   try {
     const success = await Success.findOneAndDelete({ id: id }).exec();
