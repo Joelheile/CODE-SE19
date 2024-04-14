@@ -1,10 +1,8 @@
-### CODE SE19 Handin
-
 ## "YFN Success Tracker"
 
 This project is aimed to show all the successes that happened in the Young Founders Network.
 The goal is to have a simple input UI so that everybody can add successes and then show it in a simple format.
-Ideally it would be readable in an rss format, so that it can be implemented in other Blogs
+Ideally it would be readable in an RSS format, so that it can be implemented in other blogs.
 
 <a name="readme-top"></a>
 
@@ -13,36 +11,50 @@ Ideally it would be readable in an rss format, so that it can be implemented in 
 ## Young Founders Network Success Tracker
 
 This project is aimed to show all the successes that happened in the Young Founders Network.
+This webapp has its purpose in adding value to the community.
 
 ### Built With
 
-![](https://t3.ftcdn.net/jpg/03/21/24/30/360_F_321243084_GstfWflk1eTLlzUdRZ5mjoP5IG1iCc8J.jpg)
+![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+The project is deployed on render.com and can be seen here (https://yfn-successes.onrender.com/).
+If you want to enhance the project, you are more then welcome.
 
-### Installation
+1. Duplicate the project and add your own mongoDB atlas credentials in a .env file.
+   (The free tier is sufficient)
+2. Run `npm i` to install all dependencies
+3. Run ``npm run dev`to start the project
 
-1. Download Repo or clone it
-2. Open index.html file
+## Features
+- user authentication with JWT to create a safe space to even show undisclosed news
+- adding successes and defining which success someone had
+- scrolling through success feed and feeling the imposter syndrome :)
+- searching for a specific person in the community
 
-<!-- USAGE EXAMPLES -->
 
 ## Goal
 
 The goal is to have a simple input UI so that everybody can add successes and then show it in a simple format.
+This project was also mainly a project to learn the basics of html & ejs, as well as implementing a MongoDB database.
+Refactoring and tests were also implemented to enhance the code.
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Connect DB to form
-  - [ ] Implement form submition
-  - [ ] Fetch all successes from db
+- [✅] Connect DB to form
+  - [✅] Implement form submition
+  - [✅] Fetch all successes from db
+  - [✅] Make successes editable and deletable 
+- [ ] Implement code into official yfn page (https://youngfounders.network)
 - [ ] RSS Feed that can be used on other pages
 
 See the [open issues](https://github.com/joelheile/CODE-SE19/issues) for a full list of proposed features (and known issues).
@@ -59,7 +71,7 @@ Project Link: [https://github.com/joelheile/CODE-SE19](https://github.com/joelhe
 
 ## Acknowledgments
 
-- Thanks to Samuel Boguslawski and the very insightful SE19 lecture
+- Thanks to Samuel Boguslawski and the very insightful SE19 lecture!
 - <a href="https://www.codecademy.com/">CodeCademy </a> was great to learn HTML & CSS
 
 <!-- MARKDOWN LINKS & IMAGES -->
