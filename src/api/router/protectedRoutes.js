@@ -71,13 +71,13 @@ router.get("/successfeed", verifyToken, async (request, response) => {
 });
 
 router.get("/successfeed/search", async (request, response) => {
-  const queryName = (request.query.name)
+  const queryName = request.query.name;
 
   if (!queryName) {
     return response.redirect("/successfeed");
   }
   try {
-    const regex = new RegExp(queryName, 'i'); // find people by first name
+    const regex = new RegExp(queryName, "i"); // find people by first name
     const success = await Success.find({ name: regex })
       .collation({ locale: "en", strength: 2 }) // case insensitive search
       .exec();
@@ -121,16 +121,15 @@ router.get("/success/:id/edit", async (request, response) => {
     response.render("success", { success: success });
   } catch (error) {
     console.error(error);
-    response.status(500).redirect("/successfeed")
+    response.status(500).redirect("/successfeed");
   }
 });
-
 
 router.post("/success/:id", async (request, response) => {
   try {
     const success = await Success.findOneAndUpdate(
       { id: request.params.id },
-      request.body
+      request.body,
     );
     response.redirect(`/successfeed`);
   } catch (error) {
@@ -139,10 +138,9 @@ router.post("/success/:id", async (request, response) => {
   }
 });
 
-
 // middleware for deleting input
-const methodOverride = require('method-override');
-router.use(methodOverride('_method'));
+const methodOverride = require("method-override");
+router.use(methodOverride("_method"));
 
 // delete success
 router.delete("/success/:id/delete", async (request, response) => {
