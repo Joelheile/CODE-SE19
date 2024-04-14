@@ -25,7 +25,7 @@ This webapp has its purpose in adding value to the community.
 
 ## Getting Started
 
-The project is deployed on render.com and can be seen here (https://yfn-successes.onrender.com/).
+The project is deployed on render.com and can be seen [here](https://yfn-successes.onrender.com/).
 If you want to enhance the project, you are more then welcome.
 
 1. Duplicate the project and add your own mongoDB atlas credentials in a .env file.
@@ -54,7 +54,7 @@ Refactoring and tests were also implemented to enhance the code.
   - [✅] Implement form submition
   - [✅] Fetch all successes from db
   - [✅] Make successes editable and deletable 
-- [ ] Implement code into official yfn page (https://youngfounders.network)
+- [ ] Implement code into official [YFN page](https://youngfounders.network)
 - [ ] RSS Feed that can be used on other pages
 
 See the [open issues](https://github.com/joelheile/CODE-SE19/issues) for a full list of proposed features (and known issues).
