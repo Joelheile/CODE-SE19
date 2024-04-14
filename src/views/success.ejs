@@ -26,6 +26,7 @@
             placeholder="Enter member name..."
             required
           />
+       
 
           <select id="type" name="type" required>
             <option value="award">🎉 Award</option>
@@ -33,14 +34,14 @@
             <option value="launch">🚀 Product Launch</option>
             <option value="article">📢 Article</option>
           </select>
-          <input
-            type="text"
-            id="description"
-            name="description"
-            value="<%= success.description %>"
-            placeholder="Describe the success in a sentence..."
-            required
-          />
+         
+          <textarea
+          id="description"
+          name="description"
+          rows="20"
+          cols="68"
+          required
+        ><%= success.description %></textarea>
           <input
             type="text"
             id="media"
