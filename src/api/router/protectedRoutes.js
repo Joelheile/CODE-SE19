@@ -124,19 +124,22 @@ router.get("/success/:id/edit", async (request, response) => {
   }
 });
 
-router.get("/success/:id", verifyToken, async (request, response) => {
-  const id = request.params.id;
+
+router.post("/success/:id", async (request, response) => {
   try {
-    const success = await Success.findOne({ id: id }).exec();
-    if (!success) {
-      return response.status(404).redirect("/successfeed");
-    }
-    response.render("success", { success: success });
+    const success = await Success.findOneAndUpdate(
+      { id: request.params.id },
+      request.body
+    );
+    response.redirect(`/successfeed`);
   } catch (error) {
     console.error(error);
-    response.status(500).redirect("/successfeed");
+    response.send(`Error: The success could not be created. \n ${error}`);
   }
 });
+
+
+
 
 // middleware for deleting input
 const methodOverride = require("method-override");
