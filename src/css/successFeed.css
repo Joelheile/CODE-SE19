@@ -91,12 +91,12 @@ h3 {
 }
 
 .nav-item {
-  margin-left: 5rem;
+  margin-left: 2rem;
   text-align: center;
+  padding: 1rem 1rem;
 }
 
 .nav-item:hover {
-  padding: 0.5rem;
   color: #d4c600;
   background-color: #d4c600;
   border-radius: 10px;
@@ -176,8 +176,8 @@ main {
   align-items: stretch;
   border: 1px solid #ccc;
   padding: 1rem;
-  margin-top: 2rem;
-  min-width: 50rem;
+  margin: 0.5rem 0;
+  min-width: 75rem;
   max-width: 100rem;
   border-radius: 1rem;
 }
@@ -200,7 +200,7 @@ main {
 }
 
 .card-thumbnail img {
-  max-width: 100%;
+  width: 20rem;
   height: auto;
   border-radius: 10px;
 }
@@ -225,14 +225,18 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-basis: 50%;
   padding: 0 16px;
 }
 
 .card-source {
+  display: flex;
   flex-basis: 25%;
-  justify-items: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .card-source-name {
@@ -246,15 +250,46 @@ main {
   background-color: #d4c600;
   color: black;
   border: none;
+  align-self: center;
   font-weight: 900;
   width: auto;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
-.card-source-button:hover {
+.card-edit-button {
+  padding: 8px 16px;
+  background-color: #aaaa;
+  color: black;
+  border: none;
+  align-self: center;
+  font-weight: 900;
+  width: auto;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.card-source-button:hover,
+.card-edit-button:hover {
   background-color: #feec01;
+}
+
+.card-description {
+  outline: none;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  border: #fff;
+}
+
+.card-description:hover {
+  border: #ccc;
 }
 
 /* Footer */
@@ -274,7 +309,7 @@ footer {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 7rem;
+    top: 3.5rem;
     flex-direction: column;
     background-color: #fff;
     width: 100%;
@@ -304,16 +339,18 @@ footer {
     height: 5rem;
     text-align: center;
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     border-radius: 0px;
   }
 
   .nav-item:hover {
+    padding: 0.5rem;
     color: #edde0f;
     background-color: #d4c600;
     border-radius: 10px;
-    padding: 0.5rem;
+
     color: #d4c600;
     background-color: #d4c600;
     border-radius: 0px;
@@ -343,16 +380,39 @@ footer {
   }
 
   .card-container {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    min-width: 10rem;
+    max-width: 100rem;
+    border-radius: 1rem;
   }
 
   .card-source-name {
     margin-top: 40px;
+  }
+  .card-content {
+    margin-top: 0.5rem;
+    align-self: center;
+  }
+  .card-source-button {
+    margin-top: 0.5rem;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media only screen and (max-width: 460px) {
   .icon h1 {
     font-size: small;
+  }
+  .card-container {
+    width: 80vw;
   }
 }

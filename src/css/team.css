@@ -17,7 +17,9 @@
 }
 
 .team {
-  display: flex;
+  display: grid;
+  row-gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
@@ -25,13 +27,6 @@
   margin-top: 2rem;
 }
 
-.team-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
 .team h4 {
   margin-top: 1rem;
   font-size: 20px;
@@ -71,4 +66,16 @@
   transform: scale(1.2);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 1060px) {
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .team {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

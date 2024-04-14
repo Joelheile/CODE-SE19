@@ -1,0 +1,60 @@
+@ -1,50 +0,0 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/successFeed.css" />
+    <link rel="stylesheet" href="../css/addSuccess.css" />
+    <link rel="stylesheet" href="../css/basicContainer.css" />
+    <link rel="stylesheet" href="../css/authenticationPages.css" />
+
+
+
+    <title>Login</title>
+  </head>
+  <script type="module" src="../components/toast.js"></script>
+
+
+  <body>
+    <main>
+
+      <div class="container">
+        <img
+          class="authenticationIcon"
+          src="../assets/YFN icon.png"
+          alt="logo"
+        />
+        <h3>
+          Welcome to the community space :) <br />
+          Please enter your login details
+        </h3>
+        <form action="/auth/login" method="POST">
+          <input
+            type="text"
+            id="mail"
+            name="mail"
+            placeholder="Enter your mail..."
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password..."
+            required
+          />
+
+          <button type="submit" class="submit-button">Login</button>
+        </form>
+        <a href="/auth/signup">I have not registered yet 🫣</a>
+      </div>
+
+      <% if (toastMessage.length > 0){ %>
+        <div id="toast" class="toast"><%= toastMessage %></div>
+      <% } %>
+    </main>
+
+ 
+  </body>
+</html>
