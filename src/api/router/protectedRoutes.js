@@ -71,13 +71,14 @@ router.get("/successfeed", verifyToken, async (request, response) => {
 });
 
 router.get("/successfeed/search", async (request, response) => {
-  const queryName = request.query.name;
+  const queryName = (request.query.name)
 
   if (!queryName) {
     return response.redirect("/successfeed");
   }
   try {
-    const success = await Success.find({ name: queryName })
+    const regex = new RegExp(queryName, 'i'); // find people by first name
+    const success = await Success.find({ name: regex })
       .collation({ locale: "en", strength: 2 }) // case insensitive search
       .exec();
     response.render("successFeed", {
