@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="../css/successFeed.css" />
     <link rel="stylesheet" href="/css/addSuccess.css" />
     <link rel="stylesheet" href="/css/basicContainer.css" />
 
@@ -27,7 +27,7 @@
             required
           />
 
-          <select id="type" name="type"  required>
+          <select id="type" name="type" required>
             <option value="award">🎉 Award</option>
             <option value="funding">💸 Funding</option>
             <option value="launch">🚀 Product Launch</option>
@@ -70,7 +70,7 @@
 
           <button type="submit" class="submit-button">Update Success</button>
         </form>
-        <form action="/success/<%= success.id %>/delete" method="GET">
+        <form method="POST" action="/success/<%= success.id %>?_method=DELETE">
           <button type="submit" class="delete-button">Delete entry 🫣</button>
         </form>
       </div>

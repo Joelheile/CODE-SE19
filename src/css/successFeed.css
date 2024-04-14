@@ -91,12 +91,12 @@ h3 {
 }
 
 .nav-item {
-  margin-left: 5rem;
+  margin-left: 2rem;
   text-align: center;
+  padding: 1rem 1rem;
 }
 
 .nav-item:hover {
-  padding: 0.5rem;
   color: #d4c600;
   background-color: #d4c600;
   border-radius: 10px;
@@ -176,7 +176,7 @@ main {
   align-items: stretch;
   border: 1px solid #ccc;
   padding: 1rem;
-  margin-top: 2rem;
+  margin: 0.5rem 0;
   min-width: 50rem;
   max-width: 100rem;
   border-radius: 1rem;
@@ -251,6 +251,11 @@ main {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.card-edit-button {
+  align-self: center;
 }
 
 .card-source-button:hover {
@@ -274,7 +279,7 @@ footer {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 7rem;
+    top: 3.5rem;
     flex-direction: column;
     background-color: #fff;
     width: 100%;
@@ -304,16 +309,18 @@ footer {
     height: 5rem;
     text-align: center;
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     border-radius: 0px;
   }
 
   .nav-item:hover {
+    padding: 0.5rem;
     color: #edde0f;
     background-color: #d4c600;
     border-radius: 10px;
-    padding: 0.5rem;
+
     color: #d4c600;
     background-color: #d4c600;
     border-radius: 0px;
@@ -343,16 +350,37 @@ footer {
   }
 
   .card-container {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    min-width: 10rem;
+    max-width: 100rem;
+    border-radius: 1rem;
   }
 
   .card-source-name {
     margin-top: 40px;
+  }
+  .card-content {
+    margin-top: 0.5rem;
+    align-self: center;
+  }
+  .card-source-button {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media only screen and (max-width: 460px) {
   .icon h1 {
     font-size: small;
+  }
+  .card-container {
+    width: 80vw;
   }
 }
