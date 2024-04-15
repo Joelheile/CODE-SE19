@@ -46,22 +46,19 @@ input {
   border: 0;
   outline: 0;
   padding: 0.5rem 0;
-  border-bottom: 2px solid #d3d3d3;
+  /* border-bottom: 2px solid #d3d3d3; */
   box-shadow: none;
   color: #111;
 }
 input:invalid {
   outline: 0;
 }
-input:focus,
-input:valid {
-  border-color: #91880c;
-}
+
 input:focus ~ label,
 input:valid ~ label {
   font-size: 14px;
   top: -24px;
-  color: #91880c;
+  /* color: #91880c; */
 }
 
 .form-container {

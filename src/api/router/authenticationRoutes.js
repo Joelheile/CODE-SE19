@@ -43,12 +43,12 @@ router.post("/login", async (req, res) => {
       res.redirect("/successfeed");
     } else {
       res.render("login", {
-        toastMessage: "Incorrect password. Please try again.",
+        toastMessage: "Incorrect password 🫣 Please try again.",
       });
     }
   } catch {
     res.render("login", {
-      toastMessage: "Incorrect password. Please try again.",
+      toastMessage: "Incorrect password 🫣 Please try again.",
     });
   }
 });
