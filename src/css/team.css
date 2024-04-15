@@ -1,6 +1,6 @@
 .intro {
   text-align: center;
-  margin-top: 2rem;
+
 }
 
 .intro h1 {
@@ -18,13 +18,12 @@
 
 .team {
   display: grid;
-  row-gap: 50px;
   grid-template-columns: repeat(4, 1fr);
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .team h4 {
@@ -38,7 +37,7 @@
 }
 
 .team-member {
-  margin: 1.5rem;
+
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -48,17 +47,17 @@
 }
 
 .team img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
 }
 .team-links {
   width: 10rem;
-  margin-top: 0.5rem;
+
 }
 .team-links img {
-  width: 30px;
-  height: 40px;
+  width: 20px;
+  height: 30px;
   transition: transform 0.3s ease;
 }
 
