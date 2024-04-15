@@ -1,6 +1,5 @@
 .intro {
   text-align: center;
-
 }
 
 .intro h1 {
@@ -37,7 +36,6 @@
 }
 
 .team-member {
-
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -53,7 +51,7 @@
 }
 .team-links {
   width: 10rem;
-
+  margin-bottom: 2rem;
 }
 .team-links img {
   width: 20px;
