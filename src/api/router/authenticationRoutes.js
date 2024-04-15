@@ -14,62 +14,62 @@ const verifyToken = require("../middleware/authMiddleware");
 
 const collection = require("../models/userModel");
 
-router.get("/login", (request, response) => {
-  response.render("login", { toastMessage: "" });
+router.get("/login", (req, res) => {
+  res.render("login", { toastMessage: "" });
 });
 
-router.get("/signup", (request, response) => {
-  response.render("signup", { toastMessage: "" });
+router.get("/signup", (req, res) => {
+  res.render("signup", { toastMessage: "" });
 });
 
-router.post("/login", async (request, response) => {
+router.post("/login", async (req, res) => {
   try {
-    const user = await collection.findOne({ mail: request.body.mail });
+    const user = await collection.findOne({ mail: req.body.mail });
     if (!user) {
-      response.render("login", {
+      res.render("login", {
         toastMessage: "User does not exist. Please sign up.",
       });
-      response.redirect("/signup");
+      res.redirect("/signup");
     }
     const passwordMatch = await bcrypt.compare(
-      request.body.password,
+      req.body.password,
       user.password,
     );
     if (passwordMatch) {
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
         expiresIn: "1h",
       });
-      response.cookie("token", token, { httpOnly: true });
-      response.redirect("/successfeed");
+      res.cookie("token", token, { httpOnly: true });
+      res.redirect("/successfeed");
     } else {
-      response.render("login", {
+      res.render("login", {
         toastMessage: "Incorrect password. Please try again.",
       });
     }
   } catch {
-    response.render("login", {
+    res.render("login", {
       toastMessage: "Incorrect password. Please try again.",
     });
   }
 });
 
-router.post("/signup", async (request, response) => {
+router.post("/signup", async (req, res) => {
   const data = {
-    mail: request.body.mail,
-    password: request.body.password,
+    mail: req.body.mail,
+    password: req.body.password,
   };
 
   const existingUser = await collection.findOne({ mail: data.mail });
   if (existingUser) {
-    response.render("signup", {
+    res.render("signup", {
       toastMessage: "User already exists. Please use another mail.",
     });
   } else if (!data.mail || !data.password) {
-    response.render("signup", { toastMessage: "Please fill in all fields." });
+    res.render("signup", { toastMessage: "Please fill in all fields." });
   } else if (
     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g.test(data.mail) === false
   ) {
-    response.render("signup", {
+    res.render("signup", {
       toastMessage: "Please enter a valid email adress",
     });
   } else {
@@ -83,15 +83,15 @@ router.post("/signup", async (request, response) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    response.cookie("token", token, { httpOnly: true });
-    response.redirect("/successfeed");
+    res.cookie("token", token, { httpOnly: true });
+    res.redirect("/successfeed");
   }
 });
 
-router.get("/logout", (request, response) => {
+router.get("/logout", (req, res) => {
   console.log("logged out");
-  response.clearCookie("token");
-  response.redirect("/auth/login");
+  res.clearCookie("token");
+  res.redirect("/auth/login");
 });
 
 module.exports = router;

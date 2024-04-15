@@ -5,19 +5,24 @@
   align-items: center;
   justify-content: center;
   max-width: 40rem;
-  padding: 3rem 1rem;
+  padding: 3rem 0rem;
 }
 
-.main h1 {
+main h1 {
   text-align: center;
-}
-
-h1 span {
   color: #91880c;
 }
 
 .explainer h2 {
   font-size: 24px;
+}
+
+.addsuccess-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .input-field {
@@ -34,6 +39,7 @@ label {
   transition: 0.2s all;
   cursor: text;
 }
+
 input {
   display: flex;
   width: 100%;
@@ -98,6 +104,7 @@ select:focus {
   border-radius: 4px;
   box-sizing: border-box;
   animation: pulse 1s infinite;
+  outline: none;
 }
 
 .submit-button {
@@ -134,7 +141,7 @@ select:focus {
 }
 
 .explainer {
-  margin-top: 2rem;
+  margin-left: 2rem;
   width: 35rem;
 }
 .explainer h2 {
@@ -144,10 +151,23 @@ select:focus {
   margin-right: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .main{
+    margin-top:2rem;
+  }
   .input-field,
   .form-container,
   .explainer {
     width: 100%;
+  }
+  .addsuccess-container {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 1rem;
+  }
+  .explainer {
+    margin-top: 3rem;
+    margin-left: 0;
   }
 }

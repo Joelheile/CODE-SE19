@@ -21,3 +21,12 @@
     visibility 0.5s,
     opacity 0.5s linear;
 }
+
+.container {
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  margin-top: 5rem;
+  width: 30rem;
+}
