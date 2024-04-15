@@ -34,11 +34,11 @@ If you want to enhance the project, you are more then welcome.
 3. Run ``npm run dev`to start the project
 
 ## Features
+
 - user authentication with JWT to create a safe space to even show undisclosed news
 - adding successes and defining which success someone had
 - scrolling through success feed and feeling the imposter syndrome :)
 - searching for a specific person in the community
-
 
 ## Goal
 
@@ -53,7 +53,7 @@ Refactoring and tests were also implemented to enhance the code.
 - [✅] Connect DB to form
   - [✅] Implement form submition
   - [✅] Fetch all successes from db
-  - [✅] Make successes editable and deletable 
+  - [✅] Make successes editable and deletable
 - [ ] Implement code into official [YFN page](https://youngfounders.network)
 - [ ] RSS Feed that can be used on other pages
 

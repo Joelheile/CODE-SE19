@@ -149,8 +149,8 @@ select:focus {
 }
 
 @media (max-width: 1200px) {
-  .main{
-    margin-top:2rem;
+  .main {
+    margin-top: 2rem;
   }
   .input-field,
   .form-container,
