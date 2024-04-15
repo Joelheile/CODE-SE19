@@ -11,11 +11,12 @@ router.use(express.urlencoded({ extended: true }));
 router.use(cookieParser());
 
 const verifyToken = require("../middleware/authMiddleware");
-
 router.get(
   ["/", "/welcome", "/addsuccess", "/about", "/team"],
   verifyToken,
+
   (request, response) => {
+
     if (request.path === "/") {
       response.redirect("/successFeed");
     } else {
@@ -140,6 +141,7 @@ router.post("/success/:id", async (request, response) => {
 
 // middleware for deleting input
 const methodOverride = require("method-override");
+const { verify } = require("crypto");
 router.use(methodOverride("_method"));
 
 // delete success

@@ -177,8 +177,8 @@ main {
   border: 1px solid #ccc;
   padding: 1rem;
   margin: 0.5rem 0;
-  min-width: 75rem;
-  max-width: 100rem;
+  min-width: 100%;
+  max-width: 100%;
   border-radius: 1rem;
 }
 
@@ -386,33 +386,69 @@ footer {
     border: 1px solid #ccc;
     padding: 1rem;
     margin: 0.5rem 0;
-    min-width: 10rem;
+    min-width: rem;
     max-width: 100rem;
+    max-height: 50rem;
     border-radius: 1rem;
   }
 
-  .card-source-name {
-    margin-top: 40px;
-  }
-  .card-content {
-    margin-top: 0.5rem;
-    align-self: center;
-  }
-  .card-source-button {
-    margin-top: 0.5rem;
-    display: flex;
+  .card-thumbnail {
+    flex-basis: 15%;
+    padding-right: 0;
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
+  .card-thumbnail img{
+    height:10rem;
+    width: auto
+  }
+
+  .card-content {
+    flex-basis: 70%;
+    padding: 1rem 0;
+  }
+  .card-content textarea{
+    padding: 0rem 2rem;
+    height:15rem;
+    width:100%;
+  }
+
+  .card-source {
+    flex-basis: 15%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 5rem;
+  }
+
+  .card-source-name {
+    margin-bottom: 0;
+  }
+
+  .card-source-button,
+  .card-edit-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
 }
 
 @media only screen and (max-width: 460px) {
   .icon h1 {
     font-size: small;
   }
+  .card-source-name{
+    font-size: medium;
+
+  }
+  .card-source{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
   .card-container {
-    width: 80vw;
+    min-width: 10rem;
+    max-width: 20rem;
   }
 }
