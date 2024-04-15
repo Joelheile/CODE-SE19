@@ -16,7 +16,6 @@ router.get(
   verifyToken,
 
   (request, response) => {
-
     if (request.path === "/") {
       response.redirect("/successFeed");
     } else {
